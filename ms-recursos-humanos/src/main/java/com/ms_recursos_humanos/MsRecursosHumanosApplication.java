@@ -12,7 +12,7 @@ public class MsRecursosHumanosApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MsRecursosHumanosApplication.class, args);
-		log.info("Server inicializado com sucesso na porta: 8001");
+		log.info("Server inicializado com sucesso...");
 	}
 
 }
