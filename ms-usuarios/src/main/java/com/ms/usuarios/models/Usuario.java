@@ -15,18 +15,19 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table(name = "tb_usuarios")
-public class Usuarios implements Serializable {
+@Table(name = "tb_usuario")
+public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    @Column(unique = true)
     private String email;
     private String senha;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
+    @JoinTable(name = "tb_usuario_role",
             joinColumns = @JoinColumn(name = "usuario_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
